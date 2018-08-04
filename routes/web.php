@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('phonebook');
 });
+Route::get('/{name}',function(){
+	return redirect('/');
+})->where('name','[A-Za-z]+');
