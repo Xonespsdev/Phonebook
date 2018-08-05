@@ -1,8 +1,10 @@
 <template>
+	<div>
+
 	<nav class="panel ">
   <p class="panel-heading">
     Vuejs Phonebook
-    <button class="button is-link is-outlined">
+    <button class="button is-link is-outlined" @click='openAdd'>
       Add New
     </button>
   </p>
@@ -30,4 +32,26 @@
     </span>
   </a>
 </nav>
+<Addphone :openmodal="Addactive" @closeRequest='close'></Addphone>	
+	</div>
+
 </template>
+<script>
+let Addphone=require('./addphone.vue');
+	export default {
+    components:{Addphone},
+    data(){
+    	return{
+    		Addactive : ''
+    }
+	},
+	methods:{
+		openAdd(){
+			this.Addactive='is-active';
+		},
+		close(){
+			this.Addactive=""
+		}
+	}
+}
+</script>
