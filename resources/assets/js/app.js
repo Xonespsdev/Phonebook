@@ -14,18 +14,23 @@ let Home=require('./components/home.vue');
 let Blog=require('./components/blog.vue');
 let Contact=require('./components/contact.vue');
 let About=require('./components/about.vue');
+let Signup=require('./components/signup.vue');
+let Signin=require('./components/signin.vue')
 
 const routes = [
   { path: '/home', component: Home },
   { path: '/blog', component: Blog },
    { path: '/contact', component: Contact },
-  { path: '/about', component: About }
+  { path: '/about', component: About },
+  {path: '/signup',component: Signup},
+   {path: '/signin',component: Signin}
+
 
 ]
 
 
 const router = new VueRouter({
-	// mode:('history'),
+	 mode:('history'),
   routes // short for `routes: routes`
 })
 const app = new Vue({

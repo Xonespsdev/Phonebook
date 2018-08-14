@@ -16,4 +16,10 @@ Route::get('/', function () {
 });
 Route::get('/{name}',function(){
 	return redirect('/');
+	
+
 })->where('name','[A-Za-z]+');
+
+Route::resource('addphonebook', 'PhonebookController');
+Route::post('getData', 'PhonebookController@getData');
+Route::delete('phonebook/{$id}', 'PhonebookController@deletephone');
